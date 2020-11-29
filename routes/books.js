@@ -42,7 +42,6 @@ router.get('/edit/(:id)', async (req, res) => {
     const id = req.params.id;
     await book.getBook(id)
         .then(books => {
-            console.log(books);
             res.render('books/edit', {
                 title: 'Edit Book',
                 id: books.id,

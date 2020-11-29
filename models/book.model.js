@@ -45,9 +45,6 @@ function deleteBook(id) {
     return new Promise((resolve, reject) => {
         helper.mustBeInArray(books, id)
             .then(() => {
-                console.log("I am here");
-                console.log(id);
-                console.log(books);
                 books = books.filter(p => p.id != id);
                 console.log(books);
                 helper.writeJSONFile(filename, books);
